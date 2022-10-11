@@ -8,6 +8,7 @@
   ansible.builtin.package:
     name: "{{ sshd_packages }}"
     state: present
+  when: sshd_packages | length > 0
 
 - name: Sysconfig configuration
   ansible.builtin.template:
